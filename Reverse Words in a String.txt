@@ -1,0 +1,25 @@
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        string = []
+        reverse = []
+
+        x = s.split()
+
+        for i in range(len(x)):
+            string.append(x[i])
+            if(i != len(x)-1):
+                string.append(" ")
+
+
+
+        for i in range(len(string)):
+            reverse.append(string.pop())
+
+
+
+
+        return "".join(reverse)
