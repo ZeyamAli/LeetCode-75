@@ -1,0 +1,13 @@
+class Solution:
+    def maxProfit(self, prices: list[int], fee: int) -> int:
+        profit = 0
+        buy = prices[0]
+
+        for price in prices[1:]:
+            if price>buy and price-buy>fee:
+                profit = profit+price-buy-fee
+                buy = price-fee
+            elif price<buy:
+                buy = price
+
+        return profit     
