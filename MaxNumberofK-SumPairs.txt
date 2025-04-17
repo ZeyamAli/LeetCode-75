@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+
+        sort(nums.begin(), nums.end());//ascending order
+        // sort(nums.begin(), nums.end(), greater<int>()) for descending order
+        int i=0;
+        int j=nums.size()-1;
+        int opr_count = 0;
+
+        while(i<j){
+            int num = nums[i]+nums[j];
+            if (num==k){
+                opr_count++;
+                i++;
+                j--;
+            }
+            else if(num<k){
+                i++;
+            } 
+            else if(num>k){
+                j--;
+            }
+
+        }
+        return opr_count;
+        
+    }
+};
